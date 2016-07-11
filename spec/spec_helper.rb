@@ -14,4 +14,8 @@ describe "Test Linkification" do
   it "fail - http:example.com" do
     expect(link("http:example.com")).to eql("http:example.com")
   end
+
+  it "fail - http://example.a" do
+    expect(link("http://example.a")).to eql("http://example.a")
+  end
 end
