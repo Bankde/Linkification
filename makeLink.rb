@@ -1,3 +1,7 @@
 def link(text)
-  return "<a href=\"#{text}\">#{text}</a>"
+  if (text[/http:\/\/(.)+/])
+    return "<a href=\"#{text}\">#{text}</a>"
+  else
+    return text
+  end
 end
