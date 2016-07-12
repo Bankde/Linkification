@@ -45,4 +45,19 @@ describe "Test Linkification" do
   it "success - https://sub.example.co.th" do
     expect(link("https://sub.example.co.th")).to eql("<a href=\"https://sub.example.co.th\">https://sub.example.co.th</a>")
   end
+  it "success - http://m.example.co.th" do
+    expect(link("http://m.example.co.th")).to eql("<a href=\"http://m.example.co.th\">http://m.example.co.th</a>")
+  end
+  it "fail - http://a.a.co.th" do
+    expect(link("http://a.a.co.th")).to eql("http://a.a.co.th")
+  end
+  it "fail - http://a-.example.co.th" do
+    expect(link("http://a-.example.co.th")).to eql("http://a-.example.co.th")
+  end
+  it "fail - http://hey.-a.co.th" do
+    expect(link("http://hey.-a.co.th")).to eql("http://hey.-a.co.th")
+  end
+  it "success - http://a-b.c-d.co.th" do
+    expect(link("http://a-b.c-d.co.th")).to eql("<a href=\"http://a-b.c-d.co.th\">http://a-b.c-d.co.th</a>")
+  end
 end
