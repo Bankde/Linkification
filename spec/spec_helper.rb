@@ -24,7 +24,7 @@ describe "Test Linkification" do
   end
 
   it "fail - http://ไทยเมล.คอม" do
-    expect(link("http://ไทยเมล.คอม")).to eql("<a href=\"http://ไทยเมล.คอม\">้http://ไทยเมล.คอม</a>")
+    expect(link("http://ไทยเมล.คอม")).to eql("<a href=\"http://ไทยเมล.คอม\">http://ไทยเมล.คอม</a>")
   end
 
 end
