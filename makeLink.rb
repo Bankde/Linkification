@@ -1,5 +1,5 @@
 def link(text)
-  if (text[/((http:\/\/|ftp:\/\/|https:\/\/|ssh:\/\/|file:\/\/)([\p{Letter}\p{Number}-]+)((\.)(\p{Letter}{2,})){1,2})/])
+  if (text[/((http:\/\/|ftp:\/\/|https:\/\/|ssh:\/\/|file:\/\/)(([\p{Letter}\p{Number}]+(\-([\p{Letter}\p{Number}]+))?\.)?)([\p{Letter}\p{Number}]+(\-([\p{Letter}\p{Number}]+))?)((\.)(\p{Letter}{2,})){1,2})/])
     if (text[/(.*)(#{$1})(.*)/])
       return "#{$1}<a href=\"#{$2}\">#{$2}</a>#{$3}"
     end
