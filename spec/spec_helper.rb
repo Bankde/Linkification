@@ -42,4 +42,7 @@ describe "Test Linkification" do
   it "success - test@example.com" do
     expect(link("test@example.com")).to eql("<a href=\"mailto:test@example.com\">test@example.com</a>")
   end
+  it "success - https://sub.example.co.th" do
+    expect(link("https://sub.example.co.th")).to eql("<a href=\"https://sub.example.co.th\">https://sub.example.co.th</a>")
+  end
 end
