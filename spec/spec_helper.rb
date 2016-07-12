@@ -24,4 +24,7 @@ describe "Test Linkification" do
   it "success - ftp://example.com" do
     expect(link("ftp://example.com")).to eql("<a href=\"ftp://example.com\">ftp://example.com</a>")
   end
+  it "success - mailto:test@example.com" do
+    expect(link("mailto:test@example.com")).to eql("<a href=\"mailto:test@example.com\">mailto:test@example.com</a>")
+  end
 end
