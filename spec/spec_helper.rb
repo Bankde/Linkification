@@ -30,4 +30,10 @@ describe "Test Linkification" do
   it "success - http://exam-p1e.com" do
     expect(link("http://exam-p1e.com")).to eql("<a href=\"http://exam-p1e.com\">http://exam-p1e.com</a>")
   end
+  it "success - http://example.co.th" do
+    expect(link("http://example.co.th")).to eql("<a href=\"http://example.co.th\">http://example.co.th</a>")
+  end
+  it "success - sentence" do
+    expect(link("This https://google.com is a good mail server")).to eql("This <a href=\"https://google.com\">https://google.com</a> is a good mail server")
+  end
 end
