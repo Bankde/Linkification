@@ -70,4 +70,7 @@ describe "Test Linkification" do
   it "success - http://www.example.com/index.php" do
     expect(link("http://www.example.com/index.php")).to eql("<a href=\"http://www.example.com/index.php\">http://www.example.com/index.php</a>")
   end
+  it "success - http://example.co.th/" do
+    expect(link("http://example.co.th/")).to eql("<a href=\"http://example.co.th/\">http://example.co.th/</a>")
+  end
 end
