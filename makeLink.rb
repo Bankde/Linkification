@@ -7,7 +7,7 @@ def link(text)
     if (text[/(.*)(#{$1})(.*)/])
       return "#{$1}<a href=\"#{$2}\">#{$2}</a>#{$3}"
     end
-  elsif (text[/((www\.)([\p{Letter}\p{Number}]+(\-([\p{Letter}\p{Number}]+))?)((\.)(\p{Letter}{2,})){1,2})($|\s|\z)/])
+  elsif (text[/((www\.)([\p{Letter}\p{Number}]+(\-([\p{Letter}\p{Number}]+))?)((\.)(\p{Letter}{2,})){1,2}{1,2}(\/[\S]*)?)($|\s|\z)/])
     if (text[/(.*)(#{$1})(.*)/])
       return "#{$1}<a href=\"http://#{$2}\">#{$2}</a>#{$3}"
     end
