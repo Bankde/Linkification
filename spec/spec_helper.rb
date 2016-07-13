@@ -73,4 +73,7 @@ describe "Test Linkification" do
   it "success - http://example.co.th/" do
     expect(link("http://example.co.th/")).to eql("<a href=\"http://example.co.th/\">http://example.co.th/</a>")
   end
+  it "success - This email: test@example.com is from www.example.com or http://example.com or http://example2.com" do
+    expect(link("This email: test@example.com is from www.example.com or http://example.com or http://example2.com")).to eql("This email: <a href=\"mailto:test@example.com\">test@example.com</a> is from <a href=\"http://www.example.com\">www.example.com</a> or <a href=\"http://example.com\">http://example.com</a> or <a href=\"http://example2.com\">http://example2.com</a>")
+  end
 end
